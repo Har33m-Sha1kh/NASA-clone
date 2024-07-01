@@ -1,4 +1,7 @@
+html{
 
+  touch-action:pan-y;
+}
 
 
 .hide {
