@@ -9,8 +9,9 @@ const menu_icon = document.querySelector(".menu-icon"),
    imgpara = document.querySelector(".imgpara"),
    header_img = document.querySelector(".header-img"),
    more_imgs = document.querySelectorAll(".more-imgs"),
-   header_title = document.querySelector(".header-title");
- 
+   header_title = document.querySelector(".header-title"),
+   view_img=document.querySelector(".view-img");
+ let vimageUrl;
 let currentIndex = 0,
    array = [{
       url: "assets/image.jpg",
@@ -69,14 +70,20 @@ const func = (caller, arg1, arg2) => {
 }
 
 
+// view image
+view_img.addEventListener("click",()=>{
+   window.open(vimageUrl,"_blank")
+})
+
+
 
 // APIs data fetching for general images 
 
 fetch("https://images-api.nasa.gov/search?q=&media_type=image")
    .then((response) => response.json())
    .then(data => {
-
-      img_of_the_day.setAttribute("src", data.collection.items[0].links[0].href);
+      vimageUrl=data.collection.items[0].links[0].href;
+      img_of_the_day.setAttribute("src",vimageUrl );
       imgpara.innerHTML = data.collection.items[0].data[0].description;
 
       array.push(
@@ -113,7 +120,7 @@ fetch("https://images-api.nasa.gov/search?q=technology&media_type=image")
 
       techs.forEach((e) => {
          let random = Math.trunc(Math.random() * data.collection.items.length);
-         let imageUrl = data.collection.items[random].links[0].href;
+         let    imageUrl = data.collection.items[random].links[0].href;
          let title = data.collection.items[random].data[0].title;
 
          e.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.712)), url(${imageUrl})`;
@@ -123,7 +130,7 @@ fetch("https://images-api.nasa.gov/search?q=technology&media_type=image")
 
       tech_containers.forEach((e) => {
          let random = Math.trunc(Math.random() * data.collection.items.length);
-         let imageUrl = data.collection.items[random].links[0].href;
+         let    imageUrl = data.collection.items[random].links[0].href;
          let title = data.collection.items[random].data[0].title;
 
          e.setAttribute("src", imageUrl);
@@ -142,7 +149,7 @@ fetch("https://images-api.nasa.gov/search?q=news&media_type=image")
 
       news_updates.forEach((e) => {
          let random = Math.trunc(Math.random() * data.collection.items.length);
-         let imageUrl = data.collection.items[random].links[0].href;
+          let   imageUrl = data.collection.items[random].links[0].href;
          let title = data.collection.items[random].data[0].title;
 
          e.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.712)), url(${imageUrl})`;
