@@ -10,7 +10,7 @@ const menu_icon = document.querySelector(".menu-icon"),
    header_img = document.querySelector(".header-img"),
    more_imgs = document.querySelectorAll(".more-imgs"),
    header_title = document.querySelector(".header-title");
-
+ 
 let currentIndex = 0,
    array = [{
       url: "assets/image.jpg",
