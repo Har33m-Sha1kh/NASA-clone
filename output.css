@@ -646,10 +646,6 @@ video {
   margin: 1.25rem;
 }
 
-.m-6 {
-  margin: 1.5rem;
-}
-
 .m-8 {
   margin: 2rem;
 }
@@ -881,8 +877,8 @@ video {
   overflow: hidden;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .text-wrap {
@@ -1128,6 +1124,10 @@ video {
 @media (min-width: 1024px) {
   .lg\:float-end {
     float: inline-end;
+  }
+
+  .lg\:m-6 {
+    margin: 1.5rem;
   }
 
   .lg\:mt-10 {
