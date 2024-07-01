@@ -1,3 +1,8 @@
+html{
+  touch-action: pan-y;
+}
+
+
 .hide {
   visibility: hidden;
   position: absolute;
