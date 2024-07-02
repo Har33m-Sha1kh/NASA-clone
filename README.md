@@ -7,7 +7,7 @@ _This project is a clone of the official NASA website. I aimed to replicate the 
 **Features**
 
 - Data(images/articles etc) fetching via NASA open APIs
-_ Highly responsive 
+- Highly responsive 
 
 
 **Technologies Used**
